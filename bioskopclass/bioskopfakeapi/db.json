@@ -1,0 +1,791 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "dobleh",
+      "password": "qwe",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "username": "jamal",
+      "password": "1234",
+      "role": "user"
+    },
+    {
+      "id": 4
+    },
+    {
+      "username": "idham",
+      "password": "qweasd",
+      "role": "user",
+      "id": 5
+    },
+    {
+      "username": "coba",
+      "password": "coba1",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "username": "tes",
+      "password": "123",
+      "role": "user",
+      "id": 7
+    }
+  ],
+  "studios": [
+    {
+      "id": 1,
+      "nama": "Studio 1",
+      "jumlahKursi": 260
+    },
+    {
+      "id": 2,
+      "nama": "Studio 2",
+      "jumlahKursi": 240
+    },
+    {
+      "id": 3,
+      "nama": "Studio 3",
+      "jumlahKursi": 200
+    },
+    {
+      "nama": "Studio 4",
+      "jumlahKursi": "160",
+      "id": 5
+    },
+    {
+      "nama": "garvin",
+      "jumlahKursi": "100",
+      "id": 6
+    }
+  ],
+  "movies": [
+    {
+      "title": "Jumanji: The Next Level",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157422945871583_287x421.jpg",
+      "sinopsis": "Dwayne Johnson, Karen Gillan, Jack Black dan Kevin Hart kembali ke Jumanji, keempatnya harus menyelamatkan salah satu teman mereka. Namun permainan telah berubah. Para pemain kini harus lebih berani melintasi rintangan ekstrem dan kembali dengan selamat dari permainan paling berbahaya di dunia.",
+      "sutradara": "Jake Kasdan",
+      "genre": "Action",
+      "durasi": "121",
+      "produksi": "RANS ENTERTAINMENT",
+      "jadwal": [
+        12,
+        14,
+        16
+      ],
+      "trailer": "",
+      "studioId": "1",
+      "id": 1
+    },
+    {
+      "title": "Last Christmas",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
+      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
+      "sutradara": "Paul Feig",
+      "genre": "Romance",
+      "durasi": "103",
+      "produksi": "RANS ENTERTAINMENT",
+      "jadwal": [
+        12,
+        14,
+        16,
+        20
+      ],
+      "trailer": "https://www.youtube.com/embed/z9CEIcmWmtA",
+      "studioId": "1",
+      "id": 2
+    },
+    {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_9nrOnN8sYfZZHJ06EIBSoEO5qjx7uHHEs6VtKNplGVuGhZuC",
+      "sinopsis": "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts. Even as he escapes a dreary life and enters a world of magic, he finds trouble awaiting him.",
+      "sutradara": "Chris Columbus",
+      "genre": "Fantasy Fiction",
+      "durasi": "152",
+      "produksi": "RANS ENTERTAINMENT",
+      "jadwal": [
+        14,
+        16,
+        18
+      ],
+      "trailer": "https://www.youtube.com/embed/VyHV0BRtdxo",
+      "studioId": "2",
+      "id": 3
+    },
+    {
+      "title": "Harry Potter and the Chamber of Secrets",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTltzcooPkGcy1fKKqzSuO8U6S9XBpNDR9MuYc9SS_L5AbAn66O",
+      "sinopsis": "A house elf warns Harry against returning to Hogwarts, but he decides to ignore it. When students and creatures at the school begin to get petrified, Harry finds himself surrounded in mystery.",
+      "sutradara": "Chris Columbus",
+      "genre": "Fantasy",
+      "durasi": "174",
+      "produksi": "RANS ENTERTAINMENT",
+      "jadwal": [
+        14,
+        16
+      ],
+      "trailer": "https://www.youtube.com/embed/1bq0qff4iF8",
+      "studioId": "1",
+      "id": 4
+    },
+    {
+      "title": "123",
+      "image": "213",
+      "sinopsis": "123",
+      "sutradara": "123",
+      "genre": "123",
+      "durasi": "123",
+      "produksi": "RANS ENTERTAINMENT",
+      "jadwal": [
+        16
+      ],
+      "trailer": "123",
+      "studioId": "6",
+      "id": 5
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 3,
+      "movieId": 3,
+      "jadwal": 12,
+      "totalHarga": 50000,
+      "bayar": false
+    },
+    {
+      "userId": 3,
+      "movieId": 3,
+      "jadwal": 12,
+      "totalHarga": 50000,
+      "id": 2,
+      "bayar": false
+    },
+    {
+      "userId": 3,
+      "movieId": 2,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "movieId": 2,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "movieId": 3,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 6
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 8
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 9
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 10
+    },
+    {
+      "userId": 3,
+      "movieId": 2,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 11
+    },
+    {
+      "userId": 3,
+      "movieId": 2,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 12
+    },
+    {
+      "userId": 3,
+      "movieId": 2,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "movieId": 3,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 14
+    },
+    {
+      "userId": 3,
+      "movieId": 2,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 15
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 16
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 17
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 18
+    },
+    {
+      "userId": 3,
+      "movieId": 2,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 19
+    },
+    {
+      "userId": 5,
+      "movieId": 5,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": true,
+      "id": 20
+    },
+    {
+      "userId": 5,
+      "movieId": 1,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": true,
+      "id": 21
+    },
+    {
+      "userId": 5,
+      "movieId": 3,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": true,
+      "id": 22
+    },
+    {
+      "userId": 5,
+      "movieId": 2,
+      "totalharga": 75000,
+      "jadwal": 12,
+      "bayar": true,
+      "id": 23
+    }
+  ],
+  "ordersDetails": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "row": 2,
+      "seat": 4
+    },
+    {
+      "id": 2,
+      "orderId": 1,
+      "row": 2,
+      "seat": 5
+    },
+    {
+      "id": 3,
+      "orderId": 2,
+      "row": 2,
+      "seat": 6
+    },
+    {
+      "id": 4,
+      "orderId": 2,
+      "row": 2,
+      "seat": 7
+    },
+    {
+      "id": 5,
+      "orderId": 3,
+      "row": 2,
+      "seat": 8
+    },
+    {
+      "id": 6,
+      "orderId": 3,
+      "row": 2,
+      "seat": 9
+    },
+    {
+      "orderId": 4,
+      "seat": 12,
+      "row": 4,
+      "id": 7
+    },
+    [
+      {
+        "orderId": 4,
+        "seat": 12,
+        "row": 4
+      }
+    ],
+    {
+      "orderId": 5,
+      "seat": 12,
+      "row": 4,
+      "id": 9
+    },
+    [
+      {
+        "orderId": 5,
+        "seat": 12,
+        "row": 4
+      }
+    ],
+    {
+      "orderId": 6,
+      "seat": 12,
+      "row": 4,
+      "id": 11
+    },
+    [
+      {
+        "orderId": 6,
+        "seat": 12,
+        "row": 4
+      }
+    ],
+    {
+      "orderId": 7,
+      "seat": 10,
+      "row": 3,
+      "id": 13
+    },
+    [
+      {
+        "orderId": 7,
+        "seat": 10,
+        "row": 3
+      }
+    ],
+    {
+      "orderId": 8,
+      "seat": 11,
+      "row": 3,
+      "id": 15
+    },
+    [
+      {
+        "orderId": 8,
+        "seat": 11,
+        "row": 3
+      }
+    ],
+    {
+      "orderId": 9,
+      "seat": 11,
+      "row": 2,
+      "id": 17
+    },
+    [
+      {
+        "orderId": 9,
+        "seat": 11,
+        "row": 2
+      }
+    ],
+    {
+      "orderId": 10,
+      "seat": 9,
+      "row": 1,
+      "id": 18
+    },
+    [
+      {
+        "orderId": 10,
+        "seat": 9,
+        "row": 1
+      }
+    ],
+    {
+      "orderId": 3,
+      "seat": 11,
+      "row": 1,
+      "id": 19
+    },
+    [
+      {
+        "orderId": 3,
+        "seat": 11,
+        "row": 1
+      }
+    ],
+    {
+      "orderId": 4,
+      "seat": 11,
+      "row": 2,
+      "id": 20
+    },
+    [
+      {
+        "orderId": 4,
+        "seat": 11,
+        "row": 2
+      }
+    ],
+    {
+      "orderId": 5,
+      "seat": 12,
+      "row": 2,
+      "id": 21
+    },
+    [
+      {
+        "orderId": 5,
+        "seat": 12,
+        "row": 2
+      }
+    ],
+    {
+      "orderId": 6,
+      "seat": 10,
+      "row": 2,
+      "id": 23
+    },
+    [
+      {
+        "orderId": 6,
+        "seat": 10,
+        "row": 2
+      }
+    ],
+    {
+      "orderId": 7,
+      "seat": 12,
+      "row": 3,
+      "id": 25
+    },
+    [
+      {
+        "orderId": 7,
+        "seat": 12,
+        "row": 3
+      }
+    ],
+    {
+      "orderId": 8,
+      "seat": 15,
+      "row": 3,
+      "id": 27
+    },
+    [
+      {
+        "orderId": 8,
+        "seat": 15,
+        "row": 3
+      }
+    ],
+    {
+      "orderId": 9,
+      "seat": 10,
+      "row": 4,
+      "id": 29
+    },
+    [
+      {
+        "orderId": 9,
+        "seat": 10,
+        "row": 4
+      }
+    ],
+    {
+      "orderId": 10,
+      "seat": 18,
+      "row": 1,
+      "id": 30
+    },
+    [
+      {
+        "orderId": 10,
+        "seat": 18,
+        "row": 1
+      }
+    ],
+    {
+      "orderId": 11,
+      "seat": 11,
+      "row": 4,
+      "id": 32
+    },
+    [
+      {
+        "orderId": 11,
+        "seat": 11,
+        "row": 4
+      }
+    ],
+    {
+      "orderId": 12,
+      "seat": 15,
+      "row": 2,
+      "id": 34
+    },
+    [
+      {
+        "orderId": 12,
+        "seat": 15,
+        "row": 2
+      }
+    ],
+    {
+      "orderId": 13,
+      "seat": 10,
+      "row": 1,
+      "id": 36
+    },
+    [
+      {
+        "orderId": 13,
+        "seat": 10,
+        "row": 1
+      }
+    ],
+    {
+      "orderId": 14,
+      "seat": 11,
+      "row": 4,
+      "id": 38
+    },
+    [
+      {
+        "orderId": 14,
+        "seat": 11,
+        "row": 4
+      }
+    ],
+    {
+      "orderId": 15,
+      "seat": 10,
+      "row": 4,
+      "id": 40
+    },
+    [
+      {
+        "orderId": 15,
+        "seat": 10,
+        "row": 4
+      }
+    ],
+    {
+      "orderId": 16,
+      "seat": 10,
+      "row": 6,
+      "id": 41
+    },
+    [
+      {
+        "orderId": 16,
+        "seat": 10,
+        "row": 6
+      },
+      {
+        "orderId": 16,
+        "seat": 11,
+        "row": 6
+      }
+    ],
+    {
+      "orderId": 16,
+      "seat": 11,
+      "row": 6,
+      "id": 43
+    },
+    {
+      "orderId": 16,
+      "seat": 10,
+      "row": 6,
+      "id": 44
+    },
+    [
+      {
+        "orderId": 16,
+        "seat": 10,
+        "row": 6
+      },
+      {
+        "orderId": 16,
+        "seat": 11,
+        "row": 6
+      }
+    ],
+    {
+      "orderId": 17,
+      "seat": 9,
+      "row": 5,
+      "id": 46
+    },
+    [
+      {
+        "orderId": 17,
+        "seat": 9,
+        "row": 5
+      },
+      {
+        "orderId": 17,
+        "seat": 8,
+        "row": 5
+      }
+    ],
+    {
+      "orderId": 17,
+      "seat": 9,
+      "row": 5,
+      "id": 48
+    },
+    {
+      "orderId": 17,
+      "seat": 8,
+      "row": 5,
+      "id": 49
+    },
+    [
+      {
+        "orderId": 17,
+        "seat": 9,
+        "row": 5
+      },
+      {
+        "orderId": 17,
+        "seat": 8,
+        "row": 5
+      }
+    ],
+    {
+      "orderId": 18,
+      "seat": 6,
+      "row": 0,
+      "id": 51
+    },
+    {
+      "orderId": 18,
+      "seat": 7,
+      "row": 0,
+      "id": 52
+    },
+    {
+      "orderId": 19,
+      "seat": 12,
+      "row": 6,
+      "id": 53
+    },
+    {
+      "orderId": 19,
+      "seat": 11,
+      "row": 6,
+      "id": 54
+    },
+    {
+      "orderId": 20,
+      "seat": 7,
+      "row": 0,
+      "id": 55
+    },
+    {
+      "orderId": 21,
+      "seat": 13,
+      "row": 1,
+      "id": 56
+    },
+    {
+      "orderId": 21,
+      "seat": 14,
+      "row": 1,
+      "id": 57
+    },
+    {
+      "orderId": 22,
+      "seat": 13,
+      "row": 2,
+      "id": 58
+    },
+    {
+      "orderId": 23,
+      "seat": 14,
+      "row": 4,
+      "id": 59
+    },
+    {
+      "orderId": 23,
+      "seat": 15,
+      "row": 4,
+      "id": 60
+    },
+    {
+      "orderId": 23,
+      "seat": 16,
+      "row": 4,
+      "id": 61
+    }
+  ],
+  "transactions": [],
+  "transactionsDetails": []
+}

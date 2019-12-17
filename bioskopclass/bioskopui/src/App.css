@@ -1,0 +1,186 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+/* div{
+  border: yellow 1px solid;
+} */
+.kartu{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.gambar{
+  transition: 700ms;
+}
+.gambar:hover{
+  transform: scale(1.1);
+  border-radius: 10px;
+
+}
+.gambaar1{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.username:focus{
+  outline: transparent;
+}
+
+.inputaddstudio{
+  margin-top: 10px;
+}
+
+
+
+.trailer{
+  background: transparent;
+  height: 500px;
+  margin-top: 100px;
+}
+.trailergif{
+padding-top: 0px;
+}
+
+
+.btn-order{
+  width: 43px;
+  height: 40px;
+  background-color:whitesmoke;
+  color: #5b0008;
+  border: 1px solid #5b0008;
+  transition: 200ms;
+}
+
+.btn-order:focus{
+  outline-color: #5b0008;
+}
+
+.btn-order:hover{
+  font-weight: bolder;
+}
+
+.btn-disble{
+  width: 43px;
+  height: 40px;
+  background-color:whitesmoke;
+  color: #5b0008;
+  border: 1px solid #5b0008;
+}
+.btn-pilih{
+  color: whitesmoke;
+  background-color: #5b0008d7;
+  border: 1px solid whitesmoke;
+  width: 43px;
+  height: 40px;
+}
+
+
+
+.registerform{
+  border: 2px black solid;
+  border-radius: 2%;
+  width: 400px;
+  margin-top: 70px;
+  padding: 10px;
+}
+
+.inputregis{
+  margin-top: 30px;
+}
+
+
+
+
+/* colorlib */
+#notfound {
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 520px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 240px;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 252px;
+  font-weight: 900;
+  margin: 0px;
+  color: #262626;
+  text-transform: uppercase;
+  letter-spacing: -40px;
+  margin-left: -20px;
+}
+
+.notfound .notfound-404 h1>span {
+  text-shadow: -8px 0px 0px #fff;
+}
+
+.notfound .notfound-404 h3 {
+  font-family: 'Cabin', sans-serif;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #262626;
+  margin: 0px;
+  letter-spacing: 3px;
+  padding-left: 6px;
+}
+
+.notfound h2 {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+  .notfound .notfound-404 {
+    height: 200px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 200px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .notfound .notfound-404 {
+    height: 162px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 162px;
+    height: 150px;
+    line-height: 162px;
+  }
+  .notfound h2 {
+    font-size: 16px;
+  }
+}
+
+/* colorlibends */
