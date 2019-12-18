@@ -39,7 +39,7 @@ class ManageAdmin extends Component {
     }
 
     onDeleteDataClick=(object)=>{
-        console.log(object)
+        // console.log(object)
         // var data=this.state.datafilm
         MySwal.fire({
             title: 'DELETE : '+ object.title,
@@ -89,7 +89,7 @@ class ManageAdmin extends Component {
         var jadwaltemplate=this.state.jadwal
         var jadwal=[]
         var id=this.state.datafilm[this.state.indexedit].id
-        console.log(id)
+        // console.log(id)
         for(var i=0;i<jadwaltemplate.length;i++){
             if(this.refs[`editjadwal${i}`].checked){
                 jadwal.push(jadwaltemplate[i])
@@ -213,7 +213,7 @@ class ManageAdmin extends Component {
     renderEditCheckbox=(indexedit)=>{
         var indexarr=[]
         var datafilmedit=this.state.datafilm[indexedit].jadwal
-        console.log(datafilmedit)
+        // console.log(datafilmedit)
         // console.log(this.state.jadwal)
         // console.log(this.state.jadwal.indexOf(datafilmedit[1]))
         // datafilmedit.forEach((val)=>{
@@ -266,7 +266,7 @@ class ManageAdmin extends Component {
     render() {
         const {datafilm,indexedit}=this.state
         const {length}=datafilm
-        console.log('propsrole',this.props.role)
+        // console.log('propsrole',this.props.role)
 
         if(length===0){
             return <div>loading</div>

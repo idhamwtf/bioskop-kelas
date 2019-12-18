@@ -13,13 +13,15 @@ class Managestudio extends Component {
         loading:true,
         datastudio:[],
         modaladd:false,
+        studioada:false,
+        isisalah:false,
 
      }
 
      componentDidMount(){
          Axios.get(`${APIURL}studios`)
          .then((res)=>{
-             console.log(res.data,'datastudios')
+            //  console.log(res.data,'datastudios')
              var data=res.data
              this.setState({datastudio:data,loading:false})
 
@@ -37,21 +39,35 @@ class Managestudio extends Component {
              nama:studio,
              jumlahKursi
          }
+        //  console.log(studio)
+        //  console.log(jumlahKursi)
+         Axios.get(`${APIURL}studios?nama=${studio}`)
+         .then((res)=>{
+            //  console.log(res.data.length)
+            if(res.data.length===0){
+                if(studio!=='' && jumlahKursi!==''){
+                    Axios.post(`${APIURL}studios`, data)
+                    .then((res)=>{
+                        console.log('res',res)
+                        this.setState({modaladd:false})
+                        window.location.reload()
+                    }).catch((err)=>{
+                        console.log(err)
+                    })
+                    // console.log('berhasil')
+                 }else{
+                     this.setState({isisalah:true})
+                    //  console.log('isi yang bener')
+                 }
+            }else{
+                // console.log('nama studio udah ada')
+                this.setState({studioada:true})
+            }
+         }).catch((err)=>{
+             console.log(err)
+         })
 
-         console.log(studio)
-         console.log(jumlahKursi)
-
-         if(studio!=='' && jumlahKursi!==''){
-            Axios.post(`${APIURL}studios`, data)
-            .then((res)=>{
-                console.log('res',res)
-                this.setState({modaladd:false})
-            }).catch((err)=>{
-                console.log(err)
-            })
-         }else{
-             console.log('gagal')
-         }
+        
      }
 
     renderstudios=()=>{
@@ -72,13 +88,12 @@ class Managestudio extends Component {
 
 
     render() { 
-
         if(this.state.loading){
             return(
                 <div>Loading</div>
             )
         }else
-        // console.log(this.state.datastudio,'asdasdas')
+        // console.log(this.state.datastudio,'nama')
         return ( 
             <div>
                 <Modal isOpen={this.state.modaladd} toggle={()=>this.setState({modaladd:false})}>
@@ -88,6 +103,14 @@ class Managestudio extends Component {
                     <ModalBody>
                     <input type='text' className='form-control inputaddstudio' ref='studio' placeholder='nama studio'/>
                     <input type='number' className='form-control inputaddstudio' ref='kursi' placeholder='jumlah kursi'/>
+                    {this.state.studioada===true?
+                    <div className="alert alert-danger inputregis d-flex flex-column" role="alert">Studio udah ada !</div>
+                     :
+                     this.state.isisalah===true?
+                    <div className="alert alert-danger inputregis d-flex flex-column" role="alert">Isi yang bener !</div> 
+                    :                    
+                    <div></div>
+                    }
                     </ModalBody>
                     <ModalFooter>
                     <button type="button" className="btn btn-outline-dark" onClick={this.onClickAddStudio}>Submit</button>

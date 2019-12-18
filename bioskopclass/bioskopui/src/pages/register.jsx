@@ -12,7 +12,8 @@ const MySwal = withReactContent(Swal)
 class Register extends Component {
     state = { 
         datavalid:0,
-        regissucceed:false
+        regissucceed:false,
+        userudahada:false,
      }
 
     componentDidMount(){
@@ -30,25 +31,34 @@ class Register extends Component {
             password:regispassword,
             role:regisrole
         }
-    
-        if(regisusername!==''&&regispassword!==''&&regisrepassword!==''&&regispassword===regisrepassword){
-            Axios.post(`${APIURL}users`, data)
-            .then((res)=>{
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Your work has been saved',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                  this.setState({regissucceed:true})
-            }).catch((err)=>{
-                console.log(err)
-            })
-            this.setState({datavalid:0})
-        }else{
-            this.setState({datavalid:1})
-        }
+
+        Axios.get(`${APIURL}users?username=${regisusername}`)
+        .then((res)=>{
+            if(res.data.length===0){
+                if(regisusername!==''&&regispassword!==''&&regisrepassword!==''&&regispassword===regisrepassword){
+                Axios.post(`${APIURL}users`, data)
+                .then((res)=>{
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    this.setState({regissucceed:true})
+                }).catch((err)=>{
+                    console.log(err)
+                })
+                this.setState({datavalid:0})
+                }else{
+                    this.setState({datavalid:1})
+                }
+            }else{
+                this.setState({userudahada:true})
+            } 
+        }).catch((err)=>{
+            console.log(err)
+        })
     }
 
 
@@ -66,6 +76,11 @@ class Register extends Component {
                             {this.state.datavalid===1?
                             <div class="alert alert-danger inputregis" role="alert">
                              DATA TIDAK VALID !!
+                            </div>
+                            :
+                            this.state.userudahada?
+                            <div class="alert alert-danger inputregis" role="alert">
+                             USERNAME SUDAH TERDAFTAR
                             </div>
                             :
                             <div></div>

@@ -78,9 +78,11 @@ const Header = (props) => {
                     <DropdownItem>
                       Option 1
                     </DropdownItem>
+                    <Link to={'/changepassword'}>
                     <DropdownItem>
-                      Option 2
+                      Ganti Password
                     </DropdownItem>
+                    </Link>
                     <DropdownItem divider />
 
                     <DropdownItem>

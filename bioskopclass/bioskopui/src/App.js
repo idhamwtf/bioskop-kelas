@@ -14,6 +14,7 @@ import Belitiket from './pages/belitiket'
 import Cart from './pages/cart'
 import Register from './pages/register'
 import Managestudio from './pages/managestudio';
+import Gantipass from './pages/gantipass'
 
 
 class App extends Component{
@@ -72,6 +73,7 @@ class App extends Component{
           <Route path={'/login'} exact component={Login}/>
           <Route path={'/register'} exact component={Register}/>
           <Route path={'/managestudio'} exact component={Managestudio}/>
+          <Route path={'/changepassword'} exact component={Gantipass}/>
         </Switch>
       </div>
     );
