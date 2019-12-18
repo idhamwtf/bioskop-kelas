@@ -70,6 +70,11 @@ class Managestudio extends Component {
         
      }
 
+
+     onClickDeleteStudio=(object)=>{
+         
+     }
+
     renderstudios=()=>{
         return this.state.datastudio.map((val,index)=>{
            return(
@@ -77,6 +82,10 @@ class Managestudio extends Component {
                 <TableCell>{index+1}</TableCell>
                 <TableCell>{val.nama}</TableCell>
                 <TableCell>{val.jumlahKursi}</TableCell>
+                <TableCell>
+                    <button className='btn btn-outline-primary mr-3'>Edit</button>
+                    <button className='btn btn-outline-danger'>Delete</button>
+                </TableCell>
                </TableRow>
            )
         })
@@ -126,6 +135,7 @@ class Managestudio extends Component {
                                         <TableCell>No.</TableCell>
                                         <TableCell>Nama</TableCell>
                                         <TableCell>Jumlah Kursi</TableCell>
+                                        <TableCell>Action</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
