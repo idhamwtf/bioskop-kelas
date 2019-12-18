@@ -5,7 +5,8 @@ import { APIURL } from '../support/ApiUrl';
 
 class Gantipass extends Component {
     state = { 
-        datavalid:0
+        datavalid:0,
+        gantipasssucceed:0
      }
 
 
@@ -23,7 +24,7 @@ class Gantipass extends Component {
         if(passlama===this.props.password && passbaru===repassbaru && passbaru!==this.props.password){
             Axios.patch(`${APIURL}users/${this.props.UserId}`, data)
             .then((res)=>{
-                this.setState({datavalid:0})
+                this.setState({datavalid:0,gantipasssucceed:1})
             }).catch((err)=>{
                 console.log(err)
             })
@@ -52,6 +53,9 @@ class Gantipass extends Component {
                              <span >- Password lama dan baru tidak boleh sama</span>
                             </div>
                             :
+                            this.state.gantipasssucceed===1?
+                            <div class="alert alert-success" role="alert"> BERHASIL GANTI PASSWORD</div>
+                            :               
                             <div></div>
                             }
                             <button type="button" class="btn btn-outline-dark inputgantipassword" onClick={this.onClickSubmitGantiPass}>Submit</button>

@@ -23,7 +23,7 @@
     },
     {
       "username": "idham",
-      "password": "qweasd",
+      "password": "asd",
       "role": "user",
       "id": 5
     },
@@ -44,6 +44,18 @@
       "password": "123",
       "role": "user",
       "id": 8
+    },
+    {
+      "username": "idham2",
+      "password": "123",
+      "role": "user",
+      "id": 9
+    },
+    {
+      "username": "idham3",
+      "password": "222",
+      "role": "user",
+      "id": 10
     }
   ],
   "studios": [
@@ -73,19 +85,10 @@
       "id": 6
     },
     {
-      "nama": "Studio 5",
-      "jumlahKursi": "120",
-      "id": 7
-    },
-    {
-      "nama": "Studio 6",
-      "jumlahKursi": "80",
-      "id": 8
-    },
-    {
-      "nama": "Studio 1 VIP",
-      "jumlahKursi": "20",
-      "id": 9
+      "nama": "Studio 5 3D",
+      "jumlahKursi": "30",
+      "id": 8,
+      "studio": "Studio 5 3D"
     }
   ],
   "movies": [
@@ -171,6 +174,21 @@
       "trailer": "123",
       "studioId": "6",
       "id": 5
+    },
+    {
+      "title": "asd",
+      "image": "a",
+      "sinopsis": "a",
+      "sutradara": "asd",
+      "genre": "asd",
+      "durasi": "1",
+      "produksi": "RANS ENTERTAINMENT",
+      "jadwal": [
+        14
+      ],
+      "trailer": "a",
+      "studioId": "8",
+      "id": 6
     }
   ],
   "orders": [
@@ -181,6 +199,70 @@
       "jadwal": 12,
       "bayar": false,
       "id": 1
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 25000,
+      "jadwal": 14,
+      "bayar": false,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "movieId": 1,
+      "totalharga": 50000,
+      "jadwal": 14,
+      "bayar": false,
+      "id": 3
+    },
+    {
+      "userId": 8,
+      "movieId": 1,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "movieId": 6,
+      "totalharga": 25000,
+      "jadwal": 12,
+      "bayar": false,
+      "id": 5
+    },
+    {
+      "userId": 5,
+      "movieId": 1,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": true,
+      "id": 6
+    },
+    {
+      "userId": 5,
+      "movieId": 3,
+      "totalharga": 75000,
+      "jadwal": 12,
+      "bayar": true,
+      "id": 7
+    },
+    {
+      "userId": 5,
+      "movieId": 2,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": true,
+      "id": 8
+    },
+    {
+      "userId": 5,
+      "movieId": 2,
+      "totalharga": 50000,
+      "jadwal": 12,
+      "bayar": true,
+      "id": 9
     }
   ],
   "ordersDetails": [
@@ -195,6 +277,96 @@
       "seat": 10,
       "row": 0,
       "id": 2
+    },
+    {
+      "orderId": 2,
+      "seat": 10,
+      "row": 0,
+      "id": 3
+    },
+    {
+      "orderId": 3,
+      "seat": 11,
+      "row": 1,
+      "id": 4
+    },
+    {
+      "orderId": 3,
+      "seat": 12,
+      "row": 1,
+      "id": 5
+    },
+    {
+      "orderId": 4,
+      "seat": 10,
+      "row": 2,
+      "id": 6
+    },
+    {
+      "orderId": 4,
+      "seat": 11,
+      "row": 2,
+      "id": 7
+    },
+    {
+      "orderId": 5,
+      "seat": 10,
+      "row": 0,
+      "id": 8
+    },
+    {
+      "orderId": 6,
+      "seat": 9,
+      "row": 4,
+      "id": 9
+    },
+    {
+      "orderId": 6,
+      "seat": 10,
+      "row": 4,
+      "id": 10
+    },
+    {
+      "orderId": 7,
+      "seat": 12,
+      "row": 2,
+      "id": 11
+    },
+    {
+      "orderId": 7,
+      "seat": 11,
+      "row": 2,
+      "id": 12
+    },
+    {
+      "orderId": 7,
+      "seat": 10,
+      "row": 2,
+      "id": 13
+    },
+    {
+      "orderId": 8,
+      "seat": 11,
+      "row": 3,
+      "id": 14
+    },
+    {
+      "orderId": 8,
+      "seat": 10,
+      "row": 2,
+      "id": 15
+    },
+    {
+      "orderId": 9,
+      "seat": 11,
+      "row": 6,
+      "id": 16
+    },
+    {
+      "orderId": 9,
+      "seat": 12,
+      "row": 6,
+      "id": 17
     }
   ],
   "transactions": [],

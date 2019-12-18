@@ -15,6 +15,7 @@ import Cart from './pages/cart'
 import Register from './pages/register'
 import Managestudio from './pages/managestudio';
 import Gantipass from './pages/gantipass'
+import History from './pages/history'
 
 
 class App extends Component{
@@ -74,6 +75,7 @@ class App extends Component{
           <Route path={'/register'} exact component={Register}/>
           <Route path={'/managestudio'} exact component={Managestudio}/>
           <Route path={'/changepassword'} exact component={Gantipass}/>
+          <Route path={'/history'} exact component={History}/>
         </Switch>
       </div>
     );

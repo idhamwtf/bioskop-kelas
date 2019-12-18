@@ -14,7 +14,8 @@ class Home extends Component {
     state = {
         dataMovies:[],
         datacart:[],
-        loading:true
+        loading:true,
+        
     }
     componentDidMount(){
         Axios.get(`${url}movies`)

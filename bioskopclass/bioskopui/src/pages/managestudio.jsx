@@ -5,6 +5,12 @@ import {Modal,ModalBody,ModalFooter,ModalHeader} from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import Axios from 'axios';
 import { APIURL } from '../support/ApiUrl';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
+const MySwal = withReactContent(Swal)
+
 
 
 
@@ -15,13 +21,15 @@ class Managestudio extends Component {
         modaladd:false,
         studioada:false,
         isisalah:false,
+        indexedit:0,
+        modaledit:false,
 
      }
 
      componentDidMount(){
          Axios.get(`${APIURL}studios`)
          .then((res)=>{
-            //  console.log(res.data,'datastudios')
+             console.log(res.data,'datastudios')
              var data=res.data
              this.setState({datastudio:data,loading:false})
 
@@ -71,8 +79,80 @@ class Managestudio extends Component {
      }
 
 
-     onClickDeleteStudio=(object)=>{
-         
+     onClickEditStudio=()=>{
+        //  console.log(index)
+         var studio = this.refs.studioedit.value
+         var jumlahKursi = this.refs.kursiedit.value
+         var id =this.state.datastudio[this.state.indexedit].id
+
+         console.log(id)
+
+         var data={
+             nama:studio,
+             jumlahKursi
+         }
+
+        //  console.log(studio)
+        //  console.log(jumlahKursi)
+        Axios.patch(`${APIURL}studios/${id}`,data)
+        .then(()=>{
+            Axios.get(`${APIURL}studios/`)
+            .then((res)=>{
+                this.setState({datastudio:res.data,modaledit:false})
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }).catch((err)=>{
+            console.log(err)
+        })
+     }
+
+
+
+     onClickDeleteStudio=(index)=>{
+        MySwal.fire({
+            title: 'DELETE : '+ index.nama,
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.value) {
+                MySwal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
+                  Axios.delete(`${APIURL}studios/${index.id}`, this.state.datastudio)
+                  .then((res)=>{
+                    Axios.get(`${APIURL}studios`)
+                    .then((res)=>{
+                        this.setState({datastudio:res.data,modaledit:false})
+                    })
+                }).catch((err)=>{
+                    console.log(err)
+                })
+              MySwal.fire({
+                  position: 'center',
+                  icon: 'success',
+                  title: 'Your work has been saved',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              MySwal.fire(
+                'Cancelled',
+                '',
+                'error'
+              )
+            }
+          })
      }
 
     renderstudios=()=>{
@@ -83,8 +163,8 @@ class Managestudio extends Component {
                 <TableCell>{val.nama}</TableCell>
                 <TableCell>{val.jumlahKursi}</TableCell>
                 <TableCell>
-                    <button className='btn btn-outline-primary mr-3'>Edit</button>
-                    <button className='btn btn-outline-danger'>Delete</button>
+                    <button className='btn btn-outline-primary mr-3' onClick={()=>{this.setState({indexedit:index,modaledit:true})}}>Edit</button>
+                    <button className='btn btn-outline-danger' disabled onClick={()=>this.onClickDeleteStudio(val)}>Delete</button>
                 </TableCell>
                </TableRow>
            )
@@ -96,7 +176,8 @@ class Managestudio extends Component {
     
     
     
-    render() { 
+    render() {
+        const {indexedit}=this.state
         if(this.state.loading){
             return(
                 <div>Loading</div>
@@ -104,6 +185,21 @@ class Managestudio extends Component {
             }else if (this.props.role==='admin'){
                 return ( 
                     <div>
+                        <Modal isOpen={this.state.modaledit} toggle={()=>this.setState({modaledit:false})}>
+                            <ModalHeader>
+                                Edit Studios
+                            </ModalHeader>
+                            <ModalBody>
+                            <input type='text' defaultValue={this.state.datastudio[indexedit].nama} className='form-control inputaddstudio' ref='studioedit' placeholder='nama studio'/>
+                            <input type='number' defaultValue={this.state.datastudio[indexedit].jumlahKursi} className='form-control inputaddstudio' ref='kursiedit' placeholder='jumlah kursi'/>
+                            </ModalBody>
+                            <ModalFooter>
+                            <button type="button" className="btn btn-outline-dark" onClick={()=>this.onClickEditStudio(indexedit)}>Submit</button>
+                            </ModalFooter>
+
+                        </Modal>
+
+
                     <Modal isOpen={this.state.modaladd} toggle={()=>this.setState({modaladd:false})}>
                         <ModalHeader>
                             ADD STUDIOS

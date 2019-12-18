@@ -16,12 +16,12 @@ class Cart extends Component {
      }
 
      componentDidMount(){
-        console.log(this.props)
+        // console.log(this.props)
         Axios.get(`${APIURL}orders?_expand=movie&userId=${this.props.userId}&bayar=false`)
         .then((res)=>{
             var datacart=res.data
             var qtyarr=[]
-            console.log('resdata',res.data)
+            // console.log('resdata',res.data)
             res.data.forEach(element => {
                 qtyarr.push(Axios.get(`${APIURL}ordersDetails?orderId=${element.id}`))
                 // {this.props.Tambahcart()}
@@ -33,12 +33,12 @@ class Cart extends Component {
                 res1.forEach((val)=>{
                     qtyarrfinal.push(val.data)
                 })
-                console.log(qtyarrfinal)
+                // console.log(qtyarrfinal)
                 var datafinal=[]
                 datacart.forEach((val,index)=>{
                     datafinal.push({...val,qty:qtyarrfinal[index]})
                 })
-                console.log(datafinal)
+                // console.log(datafinal)
                 this.setState({
                     datacart:datafinal
                 })
@@ -78,38 +78,63 @@ class Cart extends Component {
 
 
     onClickCheckout=()=>{
-        Axios.get(`${APIURL}orders?_expand=movie&userId=${this.props.userId}&bayar=false`)
+        Axios.get(`${APIURL}orders?userId=${this.props.userId}`)
         .then((res)=>{
-            this.setState({datacheckout:res.data})
-            
-            this.state.datacheckout.map((val,index)=>{
-                // console.log(this.state.datacheckout[index].id)
-                var id = this.state.datacheckout[index].id
-            var data={
-                bayar : true
+            // console.log(res.data)
+            var datacheck=[]
+            var data = {
+                bayar:true
             }
 
-            Axios.patch(`${APIURL}orders/${id}`, data)
+            var dataudahbayar=[]
+            res.data.forEach((val,index)=>{
+                datacheck.push(Axios.patch(`${APIURL}orders/${val.id}`, data))
+            })
+            Axios.all(datacheck)
             .then((res1)=>{
-                console.log(res1,`res1`)
-                window.location.reload()
-                // Axios.post(`${APIURL}transactions`)
+                console.log(res1,'apa?')
+                // Axios.get(`${APIURL}orders?_expand=movie&userId=${this.props.userId}&bayar=true`)
+                // .then((res2)=>{
+                //     dataudahbayar=res2.data
+                //     var qtytiket=[]
+                //     res.data.forEach((val) => {
+                //         qtytiket.push(Axios.get(`${APIURL}ordersDetails?orderId=${val.id}`))
+                //     });
+                    
 
+                // }).catch((err2)=>{
+                //     console.log(err2)
+                // })
+                window.location.reload()
             }).catch((err1)=>{
                 console.log(err1)
             })
-            })
+            console.log(datacheck,'datacheck')
+        }).catch((err)=>[
+            console.log(err)
+        ])
+        // Axios.get(`${APIURL}orders?_expand=movie&userId=${this.props.userId}&bayar=false`)
+        // .then((res)=>{
+        //     this.setState({datacheckout:res.data})
+            
+        //     this.state.datacheckout.map((val,index)=>{
+        //         // console.log(this.state.datacheckout[index].id)
+        //         var id = this.state.datacheckout[index].id
+        //     var data={
+        //         bayar : true
+        //     }
 
+        //     Axios.patch(`${APIURL}orders/${id}`, data)
+        //     .then((res1)=>{
+        //         console.log(res1,`res1`)
+        //         window.location.reload()
+        //         // Axios.post(`${APIURL}transactions`)
 
-
-
-
-
-        //    this.state.datacheckout.map((val,index)=>{
-
+        //     }).catch((err1)=>{
+        //         console.log(err1)
         //     })
-            // console.log(datacheckout)
-        })
+        //     })
+        // })
     }
 
 
@@ -120,7 +145,7 @@ class Cart extends Component {
 
     render() { 
         // console.log(this.props.userId)
-        console.log(this.state.datacart,'datacartt')
+        // console.log(this.state.datacart,'datacartt')
 
         if(this.props.userId!==1){
         return ( 
@@ -142,7 +167,7 @@ class Cart extends Component {
                                 <tbody>
                                     {this.state.datacart!==null && this.state.datacart.length!==0 ? 
                                     this.state.datacart[this.state.indexdetail].qty.map((val,index)=>{
-                                        console.log(this.state.datacart,'datacartttt')
+                                        // console.log(this.state.datacart,'datacartttt')
                                         return (
                                             <tr key={index}>
                                              <td>{index+1}</td>
@@ -179,15 +204,27 @@ class Cart extends Component {
         )
         }else if(this.props.role==='admin'){
             return(
-            <div>
-                <center>
-                anda admin
-                </center>
+                <div id="notfound">
+                <div class="notfound">
+                    <div class="notfound-404">
+                        <h3>Oops! Page not found</h3>
+                        <h1><span>4</span><span>0</span><span>4</span></h1>
+                    </div>
+                    <h2>we are sorry, but the page you requested was not found</h2>
+                </div>
             </div>
             )
         }else
         return (
-            <div>404 notfound</div>
+            <div id="notfound">
+            <div class="notfound">
+                <div class="notfound-404">
+                    <h3>Oops! Page not found</h3>
+                    <h1><span>4</span><span>0</span><span>4</span></h1>
+                </div>
+                <h2>we are sorry, but the page you requested was not found</h2>
+            </div>
+        </div>
         )
     }
 }

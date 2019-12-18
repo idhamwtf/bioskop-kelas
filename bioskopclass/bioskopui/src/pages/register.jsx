@@ -87,7 +87,7 @@ class Register extends Component {
                             }
                             <button type="button" class="btn btn-outline-dark inputregis" onClick={this.onClickSubmitRegis}>Submit</button>
                             {this.state.regissucceed?
-                            <Redirect to="/login" />
+                            <Redirect to="/" />
                             :
                             null
                                 }

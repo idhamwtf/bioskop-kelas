@@ -146,6 +146,10 @@ class Belitiket extends Component {
         })
     }
 
+    onClickClear=()=>{
+        this.setState({pilihan:[]})
+    }
+
      renderSeat=()=>{
         var arr=[]
         for(let i=0;i<this.state.baris;i++){
@@ -235,7 +239,13 @@ class Belitiket extends Component {
                         <div></div>
                     {this.state.loading?null:this.renderbutton()}
                     <div>
-                        {this.state.pilihan.length?<button className='btn btn-dark mt-3' onClick={this.onOrderClick}>Order</button>:null}
+                        {this.state.pilihan.length?
+                        <div>
+                        <button className='btn btn-dark mt-3 ml-2' onClick={this.onOrderClick}>Order</button>
+                        <button className='btn btn-dark mt-3 ml-2' onClick={this.onClickClear}>Clear</button>
+                        </div>
+                        :
+                        null}
                     </div>
                     {this.state.pilihan.length?
                         this.renderHargadanQuantity()
@@ -259,9 +269,15 @@ class Belitiket extends Component {
              );
         }
         return (
-            <div>
-                NOT FOUND
+            <div id="notfound">
+            <div class="notfound">
+                <div class="notfound-404">
+                    <h3>Oops! Page not found</h3>
+                    <h1><span>4</span><span>0</span><span>4</span></h1>
+                </div>
+                <h2>we are sorry, but the page you requested was not found</h2>
             </div>
+        </div>
         )
     }
 }

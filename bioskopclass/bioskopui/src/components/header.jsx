@@ -60,9 +60,14 @@ const Header = (props) => {
             null
               }
             {props.namauser===''?
+            <div className='d-flex'>
               <NavItem>
-                <Link to={'/login'} style={{textDecoration:'none',color:'white'}} >Login</Link>
+                <Link to={'/login'} style={{textDecoration:'none',color:'white', marginRight:'10px'}} >Login</Link>
               </NavItem>
+              <NavItem>
+              <Link to={'/register'} style={{textDecoration:'none',color:'white',marginLeft:'5px'}} >Register</Link>
+            </NavItem>
+            </div>
               :
               null
             }
@@ -75,9 +80,11 @@ const Header = (props) => {
                     {props.namauser}
                   </DropdownToggle>
                   <DropdownMenu right>
+                    <Link to={'/history'}>
                     <DropdownItem>
-                      Option 1
+                      History
                     </DropdownItem>
+                    </Link>
                     <Link to={'/changepassword'}>
                     <DropdownItem>
                       Ganti Password

@@ -27,9 +27,11 @@ export const Loginthunk=(username,password)=>{
             if(res.data.length){
                 localStorage.setItem('dino',res.data[0].id)
                 dispatch(LoginSuccessAction(res.data[0]))
+                window.location.reload()
             }else{
                 dispatch({type:'LOGIN_ERROR',payload:'Salah masukin password'})
             }
+            
         }).catch((err)=>{
             console.log(err)
             dispatch({type:'LOGIN_ERROR',payload:'server error'})
